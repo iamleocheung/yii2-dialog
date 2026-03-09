@@ -348,8 +348,8 @@
          */
         updateZIndex: function () {
             if (this.isOpened()) {
-                var zIndexBackdrop = 1050;
-                var zIndexModal = 1055;
+                var zIndexBackdrop = 1060;
+                var zIndexModal = 1065;
                 var dialogCount = 0;
                 $.each(BootstrapDialog.dialogs, function (dialogId, dialogInstance) {
                     if (dialogInstance.isRealized() && dialogInstance.isOpened()) {
