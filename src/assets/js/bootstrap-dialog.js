@@ -383,7 +383,7 @@
      * BEGIN: Fixes and enhancements for Bootstrap v4.x
      * By Kartik Visweswaran
      */
-    BootstrapDialog.METHODS_TO_OVERRIDE['v4.0'] = BootstrapDialog.METHODS_TO_OVERRIDE['v4.1'] = BootstrapDialog.METHODS_TO_OVERRIDE['v5.1'] = {
+    BootstrapDialog.METHODS_TO_OVERRIDE['v4.0'] = BootstrapDialog.METHODS_TO_OVERRIDE['v4.1'] = {
         defaultButtonCss: 'btn-outline-secondary',
         getModalBackdrop: function ($modal) {
             return $($modal.data('bs.modal')._backdrop);
@@ -401,6 +401,15 @@
             return $container.html();
         }
     };
+    /**
+     * BEGIN: Fixes and enhancements for Bootstrap v5.x
+     * By Leo Cheung
+     */
+    BootstrapDialog.METHODS_TO_OVERRIDE['v5.1'] = $.extend({}, BootstrapDialog.METHODS_TO_OVERRIDE['v4.1'], {
+        getModalBackdrop: function ($modal) {
+            return $($modal.data('bs.modal')._backdrop._element);
+        },
+    });
     /**
      * END: Fixes and enhancements for Bootstrap v4.x
      * By Kartik Visweswaran
