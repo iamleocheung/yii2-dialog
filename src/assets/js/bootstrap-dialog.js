@@ -37,7 +37,7 @@
      * Extend Bootstrap Modal and override some functions.
      * BootstrapDialogModal === Modified Modal.
      * ================================================ */
-    var bsModal = $.fn.modal ? $.fn.modal.Constructor : (bootstrap !== undefined ? bootstrap.Modal : (tabler !== undefined ? tabler.bootstrap.Modal : {}));
+    var bsModal = $.fn.modal ? $.fn.modal.Constructor : (typeof bootstrap !== 'undefined' ? bootstrap.Modal : (typeof tabler !== 'undefined' ? tabler.bootstrap.Modal : {}));
     var BootstrapDialogModal = function (element, options) {
         if (/4\.\d+\.\d+/.test(bsModal.VERSION) || /5\.\d+\.\d+/.test(bsModal.VERSION)) { //FIXME for BootstrapV4 & 5
             return new bsModal(element, options);
